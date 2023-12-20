@@ -1,4 +1,4 @@
-FROM node:20.5.1-slim AS base
+FROM node:20.10-slim AS base
 
 WORKDIR /app
 
@@ -16,7 +16,7 @@ RUN curl -fSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$
     && ln -snf /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg \
     && rm yarn-v$YARN_VERSION.tar.gz
 
-FROM node:20.5.1-slim AS final-base
+FROM node:20.10-slim AS final-base
 
 WORKDIR /app
 
